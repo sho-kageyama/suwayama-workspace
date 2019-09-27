@@ -1,0 +1,79 @@
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
+            
+        <div id="header"><h1 class="mt-5 ml-5">タイムカード</h1></div>
+        
+        <div class="mt-2 ml-5">
+        <a>キャストを指定してください</a>
+        <select class="ml-2">
+            <option selected>めむたそ</option>
+            <option>まき</option>
+            <option>派遣</option>
+            <option>体入1</option>
+        </select>
+        <a class="ml-2">時間を選択してください</a>
+        <select class="ml-2">
+            <option>1部</option>
+            <option>2部</option>
+        </select>
+        <button type="button" class="btn btn-outline-secondary ml-2">設定</button>
+        </div>
+        
+        <div><h2 class="mt-5 ml-5 d-inline-block">めむたそ 令和元年 9月度</h2> <button type="button" class="ml-5 del align-baseline btn d-inline-block btn-outline-danger">選択行を削除</button></div>
+        
+        <div id="data" >
+        <table class="mt-5 ml-5 table table-bordered tagbar">
+            <thead>
+                <tr>
+                    <th rowspan="2"><input type="checkbox"></th>
+                    <th rowspan="2"></th>
+                    <th rowspan="2">日付</th>
+                    <th colspan="3">勤怠</th>
+                    <th>日払い</th>
+                    <th colspan="6">マイナス</th>
+                    <th colspan="8">バック</th>
+                    <th colspan="7">ボーナス</th>
+                </tr>
+                <tr>
+                    <th>出金</th>
+                    <th>退勤</th>
+                    <th>時間外</th>
+                    <th>日払い</th>
+                    <th>遅刻</th>
+                    <th>当欠</th>
+                    <th>無欠</th>
+                    <th>交通費調整</th>
+                    <th>その他調整</th>
+                    <th>計</th>
+                    <th>本指小計</th>
+                    <th>同伴小計</th>
+                    <th>本指</th>
+                    <th>同伴</th>
+                    <th>場内</th>
+                    <th>ドリンク</th>
+                    <th>ボトル</th>
+                    <th>計</th>
+                    <th>シルバーボーナス</th>
+                    <th>ゴールドボーナス</th>
+                    <th>ドリンク１００ボーナス</th>
+                    <th>ドリンク２００ボーナス</th>
+                    <th>その他</th>
+                    <th>新規カード</th>
+                    <th>計</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let n of 28 | range; index as i">
+                     <td><input type="checkbox" /></td>
+                    <td><button type="button" class="btn btn-outline-danger">削除</button></td>
+                    <td>{{i+1}}日</td>
+                    <td *ngFor="let d of 25 | range"> 
+                        0
+                    </td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+    </div>
+   

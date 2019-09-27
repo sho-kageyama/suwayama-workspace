@@ -1,0 +1,71 @@
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+        <div id="base" class="pt-5">
+            
+            <div id="header" class="mt-5 ml-5"><h1>ボーイ一覧</h1></div>
+            
+            <select class="mt-5 ml-5">
+                <option>10</option>
+                <option>50</option>
+                <option selected>100</option>
+            </select><a class="select-subject">件表示</a>
+            
+            <div id="data">
+            <table class="table table-bordered mt-5 ml-5 tagbar">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>名前</th>
+                        <th>時給</th>
+                        <th>日給</th>
+                        <th>月給</th>
+                        <th>厚生費率</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>ボーイ</td>
+                        <td class="pay"><input type="text" placeholder="0"></td>
+                        <td class="pay"><input type="text" placeholder="0"></td>
+                        <td class="pay"><input type="text" placeholder="0"></td>
+                        <td class="pay"><input type="text" placeholder="0"></td>
+                        <td class="pay"><button class="btn btn-outline-danger" type="button">削除</button><button class="btn btn-outline-success ml-2" type="button">氏名変更</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+                <ul class="text-right mt-2 page-info">
+                    <li>1件中1から1まで表示</li>
+                </ul>
+
+                <div id="page" class="offset-10">
+                        <nav class="mt-2" aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link">1</a></li>
+                          <li class="page-item"><a class="page-link">2</a></li>
+                          <li class="page-item"><a class="page-link">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+             <div class="mt-5">
+                <h2 class="label pl-5">操作</h2>
+                <a class="ml-5 mt-5 btn btn-outline-primary" href="../edit/stuff-create.html">新規登録</a>
+            </div>
+            
+        </div>
+        </div>
+        

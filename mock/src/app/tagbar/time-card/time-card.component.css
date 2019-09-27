@@ -1,0 +1,19 @@
+select{
+    background-color:silver; border-radius:5px;
+}
+button{
+    line-height:15px;
+}
+table{
+    width:2500px;
+}
+table th{
+    line-height:50px;
+    border-bottom:double gray;
+}
+div#data{
+    overflow-x: scroll;
+}
+button.del{
+    line-height:25px;
+}

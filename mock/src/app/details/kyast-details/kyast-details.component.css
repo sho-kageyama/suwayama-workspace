@@ -1,0 +1,15 @@
+h2.name{
+    border-bottom:solid 1px black;
+}
+ul{
+    list-style:none;
+    text-align:center;
+}
+div#right{
+    width:60%;
+    overflow-x:scroll;
+}
+
+table.right{
+    width:2500px;
+}

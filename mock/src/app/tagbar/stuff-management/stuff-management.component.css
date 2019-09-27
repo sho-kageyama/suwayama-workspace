@@ -1,0 +1,10 @@
+table.tagbar{
+    width:95%;
+    table-layout: auto;
+}
+ul{
+    margin-right:3%;
+}
+.label{
+    background:rgba(0,0,0,0.4);
+}

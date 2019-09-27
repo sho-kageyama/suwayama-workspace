@@ -1,0 +1,19 @@
+table{
+    width:300px;
+    border-bottom:double gray;
+    border-top:double gray;
+}
+
+#canvas{
+    width:65%;
+}
+table.table.table-hover th, table.table.table-hover td{
+    border-color:gray;
+}
+
+#notice{
+    color:black;
+    background-color:gainsboro;
+    padding-top:10px;
+    padding-bottom:5px;
+}

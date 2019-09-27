@@ -1,0 +1,97 @@
+<app-menu></app-menu>
+<div id="base">
+		<div class="mt-5 ml-5">
+            <h1>収支明細(月次)  >   <a class="item" routerLink="/details/item-totalization">売上商品集計</a></h1>
+		</div>
+		
+		<div class="mt-5 w-50 align-center offset-2">
+            <table id="label" class="table text-center">
+				<thead>
+				</thead>
+				<tbody>
+                <tr>
+				<th>売上</th>
+				<td>¥450,000</td>
+				<th>入金</th>
+				<td>¥0</td>
+				<th>経費</th>
+				<td>¥200,000</td>
+				<th>粗利</th>
+				<td>¥250,000</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="mt-5" style="overflow-x:scroll;">
+			
+			<table class="ml-5 table table-bordered text-center">
+                <thead>
+				<tr>
+					<th colspan="2" rowspan="2">2019年5月</th>
+					<th class="first-th" colspan="4">売上</th>
+					<th class="first-th" colspan="2">女子売り上げ</th>
+					<th class="first-th" colspan="9">経費</th>
+					<th colspan="2" rowspan="2">粗利</th>
+				</tr>
+				<tr>
+					<th>現金</th>
+					<th >売掛</th>
+					<th>カード</th>
+					<th>売上計</th>
+					<th>本指計</th>
+					<th>同伴本計</th>
+					<th>残り支給額</th>
+					<th>給率</th>
+					<th>男子日払</th>
+					<th>女子日払</th>
+					<th>ボーナス</th>
+					<th>罰金</th>
+					<th>入金</th>
+					<th>出勤</th>
+					<th>経費計</th>
+				</tr>
+				<tr>
+					<th  colspan="2">合計</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money">0</th>
+					<th class="money" colspan="2">0</th>
+				</tr>
+			</thead>
+            <tr *ngFor="let n of 30 | range; index as i">
+				<td>2019年10月{{i + 1}}日</td>
+				<td>曜日</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td colspan="2">0</td>
+			</tr>
+			</table>
+		</div>
+		
+	</div>

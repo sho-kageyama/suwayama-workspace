@@ -1,0 +1,25 @@
+#kyast-report, #stuff-report{
+    overflow-x: scroll;
+}
+
+.rep-table{
+    margin-top:100px;
+    width:2000px;
+}
+
+.subject{
+    table-layout: auto;
+    margin-top:100px;
+    width:100%;
+}
+.memo{
+    line-height:100px;
+}
+
+button{
+    width:50%;
+    height:50px;
+}
+#money-sub{
+    background:rgba(0,0,0,0.3);
+}

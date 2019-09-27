@@ -1,0 +1,9 @@
+table.table.table-bordered.tagbar td{
+    text-align: center;
+}
+
+button.regist{
+    text-align: center;
+    width:30%;
+    line-height:40px;
+}

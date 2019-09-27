@@ -1,0 +1,188 @@
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
+        <div id="header" class="mt-5 ml-5"><h1>店舗設定</h1></div>
+        <table class="mt-5 ml-5 table table-bordered tagbar">
+            <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>値</th>
+                    <th>登録</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>開業時間:</td>
+                    <td><select>
+                        <option selected>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                    </select>:
+                    <select>
+                        <option selected>00</option>
+                        <option>15</option>
+                        <option>30</option>
+                        <option>45</option>
+                    </select></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>初期キャスト時給</td>
+                    <td>1部:¥<input type="text" placeholder="0"/><input type="checkbox"/>2部¥:
+                    <input type="text" placeholder="0" disabled="disabled"/></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>本指売上バック率:</td>
+                    <td><input type="text" placeholder="0"/></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>同伴売上バック率:</td>
+                    <td><input type="text" placeholder="0"/></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>本指名バック金額</td>
+                    <td><input type="text" placeholder="0"/></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>場内バック金額:</td>
+                    <td><input type="text" placeholder="0"/></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>同伴バック金額:</td>
+                    <td><input type="text" placeholder="0"/></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>女子売上のバック計算方法:</td>
+                    <td><select>
+                        <option selected>本計売上でバック計算</option>
+                        <option>その他</option>
+                    </select></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>初期キャスト厚生費率:</td>
+                    <td><input type="text" placeholder="0"/></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>キャストの厚生費の表示名称:</td>
+                    <td><input type="text" placeholder="厚生費"/></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>ハーフセットの指名カウント方法:</td>
+                    <td><input type="radio"/>1固定
+                        <input type="radio" checked/>0.5固定
+                        <input type="radio" />初回1、2回目以降0.5</td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>レジ金:</td>
+                    <td>準備金:<input type="text" placeholder="0"/>
+                        開始日:
+                        <select>
+                            <option selected>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                    </select>-
+                    <select>
+                        <option checkd>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                    </select>-
+                    <select>
+                        <option selected>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                    </select></td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>女子報酬締め日:</td>
+                    <td><input type="text" placeholder="0"/>日(月末は99を入れる)</td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table class="mt-5 ml-5 table table-bordered tagbar">
+            <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>値</th>
+                    <th>登録</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>本指名:</td>
+                    <td><input type="radio" />一回きりのバック
+                    <input type="radio" />毎回もらえるバック</td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>場内指名:</td>
+                    <td><input type="radio" />一回きりのバック
+                        <input type="radio" />毎回もらえるバック</td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+                <tr>
+                    <td>同伴指名:</td>
+                    <td><input type="radio" />一回きりのバック
+                        <input type="radio" />毎回もらえるバック</td>
+                    <td><button class="btn btn-outline-primary">登録</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+        <table class="mt-5 ml-5 table table-bordered tagbar">
+            <thead>
+                <tr> 
+                    
+                      <th>Name</th>
+                    <th>Point</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="radio">小計</td>
+                    <td>(Nameをチェックするとチェックが表示される)</td>
+                </tr>
+                <tr>
+                    <td><input type="radio">本指名</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio">同伴</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio">場内</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="radio">ドリンク</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="mt-5 offset-5 btn btn-outline-primary regist">登録</button>
+        
+        <div>
+            <h2 class="label mt-5 pl-5">操作</h2>
+            <button class="mt-5 mb-5 ml-5 btn btn-outline-secondary" href="../edit/reportday-create.html">レポート日追加</button>
+        </div>
+    </div>

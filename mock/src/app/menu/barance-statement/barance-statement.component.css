@@ -1,0 +1,19 @@
+#label th{
+    border:1px solid gainsboro;
+    border-radius:5px;
+    border-spacing:5px;
+    border-color:gray;
+    border-bottom:1px solid gray;
+}
+#label td{
+    border-top:none;
+    border-bottom:1px solid gray;
+}
+
+table.table.table-bordered th {
+    border-bottom:double gray;
+}
+
+a.item{
+    font-size:24px;
+}

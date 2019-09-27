@@ -1,0 +1,124 @@
+<app-menu></app-menu>
+<div id="base">
+        
+        <div id="header" class="mt-5 ml-5">
+        	<h1>レジ精算 - 2019年6月10日(照会)</h1>
+        	<a>前回精算日:2019年06月10日 > <a class="item" routerLink="/details/cash-register-month">月間一覧</a></a>
+        </div>
+        
+        
+        <div class="d-inline-block mr-lg-5">
+		<table id="left-table" class="mt-5 ml-5 table table-bordered">
+		<thead>
+			<tr>
+				<th class="total">金種</th>
+				<th class="total">枚数</th>
+				<th class="total">金額</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1万円札</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>5千円札</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>2千円札</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>千円札</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>500円玉</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>100円玉</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>50円玉</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>10円玉</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>5円玉</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td>1円玉</td>
+				<td class="money">0</td>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="total">合計金額</td>
+				<td class="money">\0</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	<div id="right" class="ml-lg-5 mt-5 align-top d-inline-block">
+		
+        <table id="right-table" class="table table-bordered">
+			<tr>
+				<th>本日釣銭</th>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<th>現金売上</th>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<th>入金合計</th>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<th>出金合計</th>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<th>レジ内現金(理論値)</th>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<th>レジ内現金</th>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<th>現金過不足</th>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<th>預金合計</th>
+				<td class="money">\0</td>
+			</tr>
+			<tr>
+				<th>翌日釣銭準備金</th>
+				<td class="money">\0</td>
+			</tr>
+		</table>
+			<p>
+			<button class="btn btn-outline-success w-100 h-100 mt-2" type="button">手動精算(金種手入力)</button>
+			</p>
+			<p>
+			<button class="btn btn-outline-primary w-100 h-100 mt-2" type="button">自動精算(金種自動入力)</button>
+			</p>
+		</div>
+	</div>

@@ -1,0 +1,65 @@
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
+		<div id="header" class="mt-5 ml-5"><h1>2019年06月 タグ集計(<a class="item" routerLink="/details/tag-daily">日次</a>|月次)</h1> </div>
+		
+		<div id="data">
+			
+			<div class="btn-group mt-5 ml-5" role="group" aria-label="Basic example">
+				<button type="button" class="btn btn-outline-secondary">Copy</button>
+				<button type="button" class="btn btn-outline-secondary">CSV</button>
+				<button type="button" class="btn btn-outline-secondary">Excel</button>
+			  </div>
+			
+			<table class="mt-5 ml-5 table table-bordered">
+				<thead>
+					<tr>
+						<th>No</th>
+						<th>タグ</th>
+						<th>件数</th>
+						<th>売上</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td><a>新規</a></td>
+						<td>1</td>
+						<td>\800</td>
+					</tr>
+					<tr>
+						<td colspan="2">合計</td>
+						<td>1</td>
+						<td>\800</td>
+					</tr>
+				</tbody>
+			</table>
+			
+                <ul class="ml-5 mt-2 text-right">
+                    <li>1件中1から1まで表示</li>
+				</ul>
+				
+				<div id="page" class="offset-10">
+					<nav class="mt-2" aria-label="Page navigation example">
+					<ul class="pagination">
+					  <li class="page-item">
+						<a class="page-link" aria-label="Previous">
+						  <span aria-hidden="true">&laquo;</span>
+						  <span class="sr-only">Previous</span>
+						</a>
+					  </li>
+					  <li class="page-item"><a class="page-link">1</a></li>
+					  <li class="page-item"><a class="page-link">2</a></li>
+					  <li class="page-item"><a class="page-link">3</a></li>
+					  <li class="page-item">
+						<a class="page-link" aria-label="Next">
+						  <span aria-hidden="true">&raquo;</span>
+						  <span class="sr-only">Next</span>
+						</a>
+					  </li>
+					</ul>
+				  </nav>
+				</div>
+            
+		</div>
+	</div>

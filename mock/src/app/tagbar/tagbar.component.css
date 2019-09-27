@@ -1,0 +1,20 @@
+#tag{
+    margin-bottom:50px;
+    margin-left:50px;
+    position:fixed;
+}
+a:link, a:visited,li.nav-item a.active:link,li.nav-item a.active:visited{
+    color:black;
+}
+li.nav-item a:hover, li.nav-item a.active:hover{
+    color:#cf5b63;
+    border-bottom:double #cf5b63;
+}
+li.nav-item a.active{
+    border-color:gray;
+    background:none;
+}
+
+ul.nav{
+    border-bottom-color:gray;
+}
