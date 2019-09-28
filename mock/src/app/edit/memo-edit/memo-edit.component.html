@@ -1,8 +1,9 @@
-<div id="base">
-            
-        <div id="header"><h1 class="tag-header">メモ一覧</h1></div>
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">    
+        <div id="header" class="mt-5 ml-5"><h1 class="tag-header">メモ一覧</h1></div>
         
-        <table class="management memoarea">
+        <table class="mt-5 ml-5 table table-bordered tagbar mb-5">
             <thead>
                 <tr>
                     <th width="20%">時間</th>
@@ -12,7 +13,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><select>
+                    <td class="align-middle"><select>
                         <option>2019</option>
                         <option>2018</option>
                         <option>2017</option>
@@ -56,8 +57,8 @@
                         <option>29</option>
                         <option>30</option>
                     </select></td>
-                    <td><textarea cols="100" rows="20"></textarea></td>
-                    <td><input class="operate update" type="button" value="更新" onclick="location.href='../setting/memo-list.html'"/></td>
+                    <td><textarea cols="100" rows="10"></textarea></td>
+                    <td class="text-center align-middle"><button class="btn btn-outline-secondary" type="button" routerLink="/tag/memo-summary">更新</button></td>
                 </tr>
             </tbody>
         </table>

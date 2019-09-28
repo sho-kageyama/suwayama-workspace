@@ -1,9 +1,11 @@
-<div id="base">
-		<div id="header"><h1>入出金項目 編集</h1></div>
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
+		<div id="header" class="mt-5 ml-5"><h1>入出金項目 編集</h1></div>
 		
 		<div id="data">
 			
-			<table class="management">
+			<table class="mt-5 ml-5 table table-bordered tagbar">
 				<thead>
 					<tr>
 						<th>名称</th>
@@ -15,13 +17,13 @@
 					<tr>
 						<td><input type="text" value="test2" /></td>
 						<td>出金</td>
-						<td><input class="operate" type="button" value="更新" onclick="location.href='../setting/deposit-payoff.html'"/></td>
+						<td class="text-center"><button class="btn btn-outline-secondary" type="button" routerLink="/tag/deposit-summary">更新</button></td>
 					</tr>
 				</tbody>
 			</table>
-			 <div class="label">
-                <h2>操作</h2>
-                <a class="item" href="../setting/deposit-payoff.html">一覧へ戻る</a>
+			 <div class="mt-5">
+                <h2 class="label pl-5">操作</h2>
+                <button class="mt-5 ml-5 btn btn-outline-secondary" routerLink="/tag/deposit-summary">一覧へ戻る</button>
             </div>
 			
 		</div>

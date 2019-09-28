@@ -1,10 +1,12 @@
-<div id="base">
-		<div id="header"><h1>ボーイ管理</h1></div>
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
+		<div id="header" class="mt-5 ml-5"><h1>ボーイ管理</h1></div>
 		
 		<div id="data">
-		<h3>新スタッフデータ入力</h3>
+		<h3 class="mt-5 ml-5">新スタッフデータ入力</h3>
 			
-			<table class="management">
+			<table class="mt-5 ml-5 table table-bordered tagbar">
 				<thead>
 					<tr>
 						<th>名前</th>
@@ -18,11 +20,11 @@
 				<tbody>
 					<tr>
 						<td><input type="text" /></td>
-						<td><input type="text" placeholder="0"/></td>
-						<td><input type="text" placeholder="0"/></td>
-						<td><input type="text" placeholder="0"/></td>
-						<td><input type="text" placeholder="0"/></td>
-						<td><input type="button" value="登録" onclick="location.href='../setting/stuff-management.html'"/></td>
+						<td><input class="text-right" type="number" placeholder="0"/></td>
+						<td><input class="text-right" type="number" placeholder="0"/></td>
+						<td><input class="text-right" type="number" placeholder="0"/></td>
+						<td><input class="text-right" type="number" placeholder="0"/></td>
+						<td><button type="button" class="btn btn-outline-secondary" routerLink="/tag/stuff-management">登録</button></td>
 					</tr>
 				</tbody>
 			</table>

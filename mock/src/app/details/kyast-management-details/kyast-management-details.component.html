@@ -1,9 +1,9 @@
-<div id="base">
-        <div id="header"><h1>キャスト管理 - ひなた</h1></div>
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
+        <div id="header" class="mt-5 ml-5"><h1>キャスト管理 - ひなた</h1></div>
         <div id="data">
-            
-        
-        <table class="management" style="table-layout:fixed;">
+        <table class="mt-5 ml-5 table table-bordered tagbar">
         <thead>
             <tr>
                 <th>日付</th>
@@ -13,6 +13,12 @@
             </tr>
         </thead>
         <tbody>
+            <tr *ngFor="let d of 31 | range; index as i">
+                <td>2019-6-{{i+1}}日</td>
+                <td><input type="number" placeholder="0"></td>
+                <td><input type="number" placeholder="0"></td>
+                <td><input type="number" placeholder="0.00"></td>
+            </tr>
         </tbody>
         </table>
         </div>

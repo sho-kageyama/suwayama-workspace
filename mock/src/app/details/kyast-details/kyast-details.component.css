@@ -11,5 +11,13 @@ div#right{
 }
 
 table.right{
-    width:2500px;
+    width:3000px;
+}
+
+table th.first{
+    font-size:12px;
+    text-align:center;
+}
+table.right td{
+    text-align:right;
 }

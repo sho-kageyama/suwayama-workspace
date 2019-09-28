@@ -31,7 +31,7 @@
                         <td class="pay"><input type="text" placeholder="0"></td>
                         <td class="pay"><input type="text" placeholder="0"></td>
                         <td class="pay"><input type="text" placeholder="0"></td>
-                        <td class="pay"><button class="btn btn-outline-danger" type="button">削除</button><button class="btn btn-outline-success ml-2" type="button">氏名変更</button></td>
+                        <td class="pay"><button class="btn btn-outline-danger" type="button" (click)="stuffDel()">削除</button><button class="btn btn-outline-success ml-2" type="button">氏名変更</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -63,7 +63,7 @@
                     </div>
              <div class="mt-5">
                 <h2 class="label pl-5">操作</h2>
-                <a class="ml-5 mt-5 btn btn-outline-primary" href="../edit/stuff-create.html">新規登録</a>
+                <a class="ml-5 mt-5 mb-5 btn btn-outline-primary" routerLink="/edit/stuff-regist">新規登録</a>
             </div>
             
         </div>

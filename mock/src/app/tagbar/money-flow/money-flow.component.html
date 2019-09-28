@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <app-tagbar></app-tagbar>
 <div id="base" class="pt-5">
-<div id="header"><h1 class="mt-5 ml-5">入出金履歴  >  <a class="item" href="money-flow-month.html" style="font-size:20px;">月次合計</a></h1></div>
+<div id="header"><h1 class="mt-5 ml-5">入出金履歴  >  <a class="month" routerLink="/details/money-flow-month">月次合計</a></h1></div>
 <div id="select">
     <select class="mt-5 ml-5">
         <option selected>全て表示</option>
@@ -32,8 +32,8 @@
             <td>ドン ペリニョン</td>
             <td>¥48,000</td>
             <td></td>
-            <td><button class="btn btn-outline-warning" type="button">編集</button>
-            <button class="ml-2 btn btn-outline-danger" type="button" >削除</button></td>
+            <td class="text-center"><button class="btn btn-outline-warning" type="button" routerLink="/edit/money-flow">編集</button>
+            <button class="ml-5 btn btn-outline-danger" type="button" >削除</button></td>
         </tr>
     </tbody>
 </table>
@@ -66,6 +66,6 @@
 
 <div>
     <h2 class="pl-5 label">操作</h2>
-    <a class="mt-5 ml-5 btn btn-outline-secondary" href="cost-create.html">新規登録</a>
+    <a class="mt-5 mb-5 ml-5 btn btn-outline-secondary" routerLink="/edit/expese-regist">新規登録</a>
 </div>
 </div>

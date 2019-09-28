@@ -1,9 +1,11 @@
-<div id="base">
-		<div id="header"><h1  class="tag-header">入出金項目 編集</h1></div>
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
+		<div id="header" class="mt-5 ml-5"><h1  class="tag-header">入出金項目 編集</h1></div>
 		
 		<div id="data">
 			
-			<table class="management">
+			<table class="mt-5 ml-5 table table-bordered tagbar">
 				<thead>
 					<tr>
 						<th>名前</th>
@@ -21,13 +23,13 @@
 							<option>ボーナス</option>
 							</select></td>
 						<td><input type="text" placeholder="0"/></td>
-						<td><input class="operate" type="button" value="更新" onclick="location.href='../setting/slary.html'"/></td>
+						<td class="text-center"><button class="btn btn-outline-secondary" type="button" routerLink="/tag/salary-summary">更新</button></td>
 					</tr>
 				</tbody>
 			</table>
-			 <div class="label">
-                <h2>操作</h2>
-                <a class="item" href="../setting/slary.html">一覧へ戻る</a>
+			 <div class="mt-5">
+                <h2 class="label pl-5">操作</h2>
+                <button class="mt-5 ml-5 btn btn-outline-secondary" routerLink="/tag/salary-summary">一覧へ戻る</button>
             </div>
 			
 		</div>

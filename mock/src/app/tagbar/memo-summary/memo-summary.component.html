@@ -22,8 +22,8 @@
                 <tr>
                     <td>2019-06-14</td>
                     <td>test</td>
-                    <td class="text-center"><button class="btn btn-outline-warning" type="button">編集</button>
-                        <button class="ml-5 btn btn-outline-danger" type="button" >削除</button></td>
+                    <td class="text-center"><button class="btn btn-outline-warning" type="button" routerLink="/edit/memo-edit">編集</button>
+                        <button class="ml-5 btn btn-outline-danger" type="button" (click)="memoDel()">削除</button></td>
                 </tr>
             </tbody>
         </table>

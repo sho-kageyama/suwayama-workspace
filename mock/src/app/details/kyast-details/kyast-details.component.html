@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <div id="base" class="pt-5">
 		
-		<div class="d-inline-block ml-5">
+		<div class="d-inline-block align-top mt-5 ml-5">
 		<div id="header mt-5">
 			<ul class="header">
 						<li><h2 class="name ">報酬支払明細書</h2></li>
@@ -12,7 +12,7 @@
 			</ul>
 		</div>
 		
-			<table class="table table-bordered">
+			<table class="mt-5 table table-bordered">
 				<tr>
 					<th colspan="2">労働日数</th>
 					<td>2日</td>
@@ -142,7 +142,7 @@
 			</table>
 		</div>
 		<div id="right" class="d-inline-block ml-5 mt-5 align-middle" >
-			<table class="table table-bordered right">
+			<table class="mt-5 table table-bordered right">
 			<thead>
 				<tr>
 					<th rowspan="3">日付</th>
@@ -221,8 +221,9 @@
 			</thead>
 			<tbody>
 				<tr *ngFor="let p of 31 | range; index as l">
-					<td *ngFor="let d of 56 | range; index as i">
-						
+						<th class="first">{{l+1}}日</th>
+					<td *ngFor="let d of 55 | range; index as i">
+						0
 					</td>
 				</tr>
 			</tbody>

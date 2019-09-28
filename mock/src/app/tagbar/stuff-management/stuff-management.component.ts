@@ -12,4 +12,9 @@ export class StuffManagementComponent implements OnInit {
   ngOnInit() {
   }
 
+  stuffDel() {
+    if(confirm('ボーイを削除します。よろしいですか？')){
+      
+    }
+  }
 }

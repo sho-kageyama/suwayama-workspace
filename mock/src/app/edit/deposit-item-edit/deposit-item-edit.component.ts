@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-deposit-item-edit',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepositItemEditComponent implements OnInit {
 
-  constructor() { }
+  name:string;
+
+  constructor(
+    private router : ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    const text = this.router.snapshot.queryParamMap.get('test2');
+    alert(text);
+    this.router.queryParams.subscribe(
+      params => {
+        alert(params['name']);
+        console.log(params);
+      }
+    )
   }
 
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteHistoryComponent } from './delete-history.component';
+import { MoneyFlowMonthComponent } from './money-flow-month.component';
 
-describe('DeleteHistoryComponent', () => {
-  let component: DeleteHistoryComponent;
-  let fixture: ComponentFixture<DeleteHistoryComponent>;
+describe('MoneyFlowMonthComponent', () => {
+  let component: MoneyFlowMonthComponent;
+  let fixture: ComponentFixture<MoneyFlowMonthComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeleteHistoryComponent ]
+      declarations: [ MoneyFlowMonthComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteHistoryComponent);
+    fixture = TestBed.createComponent(MoneyFlowMonthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

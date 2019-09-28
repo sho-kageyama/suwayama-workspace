@@ -12,4 +12,9 @@ export class MemoSummaryComponent implements OnInit {
   ngOnInit() {
   }
 
+  memoDel(){
+    if(confirm('testを削除します。よろしいですか?')){
+      
+    }
+  }
 }

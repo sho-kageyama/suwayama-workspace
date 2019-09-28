@@ -2,33 +2,34 @@
 <app-tagbar></app-tagbar>
 <div id="base" class="pt-5">
             
-        <div id="header"><h1 class="mt-5 ml-5">印刷履歴</h1></div>
-        
-        <select class="mt-5 ml-5">
-            <option>10</option>
-            <option>50</option>
-            <option selected>100</option>
-        </select><a class="select-subject">件表示</a>
+        <div id="header" class="mt-5 ml-5"><h1><a class="history" routerLink="/tag/money-flow">入出金履歴</a>  >  月次合計</h1></div>
+        <div id="select">
+            <select class="mt-5 ml-5">
+                <option selected>全て表示</option>
+                <option>その他</option>
+            </select><br>
+            <select class="mt-5 ml-5">
+                <option>10</option>
+                <option>50</option>
+                <option selected>100</option>
+            </select><a class="select-subject">件表示</a>
+        </div>
         
         <table class="mt-5 ml-5 table table-bordered tagbar">
             <thead>
                 <tr>
-                    <th>伝票ID</th>
-                    <th>伝票金額</th>
-                    <th>来店日時</th>
-                    <th>印刷日時</th>
-                    <th>レシート種類</th>
-                    <th>操作</th>
+                    <th>入出金</th>
+                    <th>項目名</th>
+                    <th>金額</th>
+                       <th>件数</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>A3D59723-C2CF-438B-911E-A0FBC43C0FE7-2875</td>
-                    <td>¥100,000</td>
-                    <td>2019-06-24</td>
-                    <td>2019-06-24</td>
-                    <td>会計</td>
-                    <td class="text-center"><button type="button" class="btn btn-outline-secondary" routerLink="/details/print-history">詳細</button></td>
+                    <td>出金</td>
+                    <td>ドン ペリニョン</td>
+                    <td>¥48,000</td>
+                    <td>1</td>
                 </tr>
             </tbody>
         </table>
@@ -59,4 +60,3 @@
             </div>
         
     </div>
-    

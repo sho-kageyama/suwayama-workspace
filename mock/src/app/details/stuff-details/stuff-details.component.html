@@ -1,8 +1,9 @@
-<div id="base" class="detail">
+<app-menu></app-menu>
+<div id="base" class="pt-5">
 		
-		<div class="detail-left">
+		<div class="d-inline-block align-top mt-5 ml-5">
 		<div id="header">
-			<ul class="header">
+			<ul class="header mt-5">
 						<li><h2 style="border-bottom:solid 1px black;">給料支払明細書</h2></li>
 						<li><a>令和元年06月分</a></li>
 						<li><a>店名</a></li>
@@ -10,7 +11,7 @@
 			</ul>
 		</div>
 		
-			<table class="left">
+			<table class="mt-5 table table-bordered">
 				<tr>
 					<th colspan="2">労働日数</th>
 					<td>2日</td>
@@ -103,8 +104,8 @@
 				</tr>
 			</table>
 		</div>
-			<div class="detail-right" style="overflow-x:scroll;">
-			<table class="right">
+			<div id="right" class="d-inline-block mt-5 ml-5 align-middle">
+			<table class="mt-5 table table-bordered right">
 			<thead>
 				<tr>
 					<th rowspan="2" colspan="2">日付</th>
@@ -137,6 +138,10 @@
 				</tr>
 			</thead>
 			<tbody>
+				<tr *ngFor="let p of 31 | range; index as l">
+					<th class="first">{{l+1}}日</th>
+					<td *ngFor="let d of 20 | range; index as i">0</td>
+				</tr>
 			</tbody>
 			</table>
 		</div>

@@ -12,4 +12,9 @@ export class SalarySummaryComponent implements OnInit {
   ngOnInit() {
   }
 
+  salaryDell(){
+    if(confirm('遅刻を削除します。よろしいですか?')){
+      
+    }
+  }
 }

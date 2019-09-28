@@ -1,9 +1,11 @@
-<div id="base">
-		<div id="header"><h1 class="tag-header">諸経費登録</h1></div>
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
+		<div id="header" class="mt-5 ml-5"><h1 class="tag-header">諸経費登録</h1></div>
 		
 		<div id="data">
 			
-			<table class="management">
+			<table class="mt-5 ml-5 table table-bordered tagbar">
 				<thead>
 					<tr>
 						<th>諸経費項目</th>
@@ -17,15 +19,15 @@
 						<td><select>
 							<option>ドンペリ</option>
 							</select></td>
-						<td><input type="text" /></td>
-						<td><input type="text" /></td>
-						<td><input class="operate" type="button" value="登録" onclick="location.href='../setting/money-flow.html'"/></td>
+						<td class="text-center"><input type="text" /></td>
+						<td class="text-center"><input type="date" /></td>
+						<td class="text-center"><button class="btn btn-outline-secondary" type="button" routerLink="/tag/money-flow">登録</button></td>
 					</tr>
 				</tbody>
 			</table>
-			 <div class="label">
-                <h2>操作</h2>
-                <a class="item" href="../setting/money-flow.html">一覧へ戻る</a>
+			 <div class="mt-5">
+                <h2 class="label pl-5">操作</h2>
+                <button class="mt-5 ml-5 btn btn-outline-secondary" routerLink="/tag/money-flow">一覧へ戻る</button>
             </div>
 			
 		</div>

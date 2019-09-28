@@ -1,8 +1,9 @@
-<div id="base">
-		
+<app-menu></app-menu>
+<app-tagbar></app-tagbar>
+<div id="base" class="pt-5">
 		<div id="data">
 			
-			<table class="">
+			<table class="mt-5 ml-5 table table-bordered tagbar">
 				<thead>
 					<tr>
 						<th>給料日</th>
@@ -43,13 +44,13 @@
 							<option>29</option>
 							<option>30</option>
 							</select></td>
-						<td><input type="button" value="登録" onclick="location.href='../setting/store-management.html'"/></td>
+						<td class="text-center"><button type="button" class="btn btn-outline-secondary" routerLink="/tag/store-setting">登録</button></td>
 					</tr>
 				</tbody>
 			</table>
-			 <div class="label">
-                <h2>操作</h2>
-                <a class="item" href="../setting/store-management.html">List</a>
+			 <div class="mt-5">
+                <h2 class="pl-5 label">操作</h2>
+                <button class="mt-5 ml-5 btn btn-outline-primary" routerLink="/tag/store-setting">List</button>
             </div>
 			
 		</div>

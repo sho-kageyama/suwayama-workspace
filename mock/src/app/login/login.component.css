@@ -4,16 +4,16 @@
     justify-content: center;
     align-items: center;
     width:100%;
-    height:850px;
-    background: linear-gradient(225deg, white 20%, white 100px,#7e7e7e 40%, #7e7e7e 100px,#222222 80%, #222222 100px  );
+    height:700px;
+    /* background: linear-gradient(225deg, white 20%, white 100px,#7e7e7e 40%, #7e7e7e 100px,#222222 80%, #222222 100px  );
     
-    background-size:100%;
+    background-size:100%; */
 }
 
-form{
-	background:rgba(0,0,0,0.5);
+div#login-form{
+	background:rgba(255,255,255,0.2);
 	position:relative;
-	top:250px;
+	top:20px;
 	padding:25px;
 	border-radius:5px;
 }
@@ -21,5 +21,5 @@ form{
 div.form-group label{
 	color:white;
 	font-style:italic;
-	text-shadow:0 0 3px rgba(247, 167, 181,0.7), 0 0 8px rgba(247, 167, 181,0.8);
+	text-shadow:0 0 3px gray, 0 0 8px gray;
 }

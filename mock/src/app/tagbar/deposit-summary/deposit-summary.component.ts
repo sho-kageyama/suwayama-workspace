@@ -12,4 +12,9 @@ export class DepositSummaryComponent implements OnInit {
   ngOnInit() {
   }
 
+  depositDel(number:number){
+    if(confirm('test'+number+'を削除します。よろしいですか？')){
+      
+    }
+  }
 }

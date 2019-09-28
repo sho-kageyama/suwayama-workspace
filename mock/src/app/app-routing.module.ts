@@ -37,6 +37,9 @@ import { KyastComponent } from './menu/kyast/kyast.component';
 import { ItemComponent } from './details/item/item.component';
 import { CashRegisterMonthComponent } from './details/cash-register-month/cash-register-month.component';
 import { TagDailyComponent } from './details/tag-daily/tag-daily.component';
+import { MoneyFlowMonthComponent } from './details/money-flow-month/money-flow-month.component';
+import { DeleteHistoryDetailsComponent } from './details/delete-history-details/delete-history-details.component';
+import { PrintHistoryDetailsComponent } from './details/print-history-details/print-history-details.component';
 
 
 const routes: Routes = [
@@ -63,19 +66,22 @@ const routes: Routes = [
   {path: 'tag/time-card', component: TimeCardComponent},
   {path: 'edit/expese-regist', component: ExpenseRegistrationComponent},
   {path: 'edit/deposit-regist', component: DepositItemRegistrationComponent},
-  {path: 'edit/deposit-edit', component: DepositItemEditComponent},
+  {path: 'edit/deposit-edit/:name', component: DepositItemEditComponent},
   {path: 'edit/memo-edit', component: MemoEditComponent},
   {path: 'edit/money-flow', component: MoneyFlowEditComponent},
   {path: 'edit/payday-regist', component: PaydayRegistrationComponent},
   {path: 'edit/salary-regist', component: SalaryItemRegistrationComponent},
   {path: 'edit/salary-edit', component: SalaryEditComponent},
-  {path: 'edit/stuff-regit', component: StuffRegistrationComponent},
+  {path: 'edit/stuff-regist', component: StuffRegistrationComponent},
   {path: 'details/kyast', component: KyastDetailsComponent},
   {path: 'details/stuff', component: StuffDetailsComponent},
   {path: 'details/kyast-management', component: KyastManagementDetailsComponent},
   {path: 'details/item-totalization', component: ItemComponent},
   {path: 'details/cash-register-month', component: CashRegisterMonthComponent},
   {path: 'details/tag-daily', component: TagDailyComponent},
+  {path: 'details/delete-history', component: DeleteHistoryDetailsComponent},
+  {path: 'details/print-history', component: PrintHistoryDetailsComponent},
+  {path: 'details/money-flow-month', component: MoneyFlowMonthComponent},
   {path: '**', redirectTo: '/'}
 ];
 

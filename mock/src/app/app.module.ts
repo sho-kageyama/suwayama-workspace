@@ -41,7 +41,10 @@ import { KyastComponent } from './menu/kyast/kyast.component';
 import { RangePipe } from './tools/range-pipe';
 import { ItemComponent } from './details/item/item.component';
 import { CashRegisterMonthComponent } from './details/cash-register-month/cash-register-month.component';
-import { TagDailyComponent } from './details/tag-daily/tag-daily.component'
+import { TagDailyComponent } from './details/tag-daily/tag-daily.component';
+import { MoneyFlowMonthComponent } from './details/money-flow-month/money-flow-month.component';
+import { DeleteHistoryDetailsComponent } from './details/delete-history-details/delete-history-details.component';
+import { PrintHistoryDetailsComponent } from './details/print-history-details/print-history-details.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +87,10 @@ import { TagDailyComponent } from './details/tag-daily/tag-daily.component'
     RangePipe,
     ItemComponent,
     CashRegisterMonthComponent,
-    TagDailyComponent
+    TagDailyComponent,
+    MoneyFlowMonthComponent,
+    DeleteHistoryDetailsComponent,
+    PrintHistoryDetailsComponent
   ],
   imports: [
     BrowserModule,
