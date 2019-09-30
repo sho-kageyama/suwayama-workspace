@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XDemo.MainPage">
+
+    <StackLayout>
+        <Grid>
+            <!-- Place new controls here -->
+            <Label Text="Menu"
+                   FontSize="50"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" 
+                   Margin="0,30,0,0" 
+                   TextColor="#7F000000" 
+                   FontAttributes="Italic" />
+
+            <Button Text="Memo"
+                    FontSize="40"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontAttributes="Italic" 
+                    TextColor="#7F0D0DC1" 
+                    Margin="0,25,0,0" 
+                    BackgroundColor="#00000000"
+                    Clicked="MemoCommand"/>
+
+            <Button Text="Timer"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="40"
+                    FontAttributes="Italic" 
+                    TextColor="#7F0D0DC1"
+                    Margin="0,25,0,0"
+                    BackgroundColor="#00000000"
+                    Clicked="TimerCommand"/>
+
+            <Button Text="Paint"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    FontSize="50"
+                    FontAttributes="Italic" 
+                    TextColor="#7F0D0DC1"
+                    Margin="0,25,0,0"
+                    BackgroundColor="#00000000"
+                    Clicked="PaintCommand"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
