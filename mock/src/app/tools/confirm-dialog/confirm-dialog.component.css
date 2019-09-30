@@ -1,0 +1,27 @@
+div#dialog{
+    width:100%;
+    height:100%;
+}
+
+div#dialog-header{
+    border-bottom:double #7e7e7e;
+}
+
+div#dialog-footer{
+    margin-top:10px;
+    
+}
+
+table{
+    border-bottom:double #7e7e7e;
+    color:#3e3e3e;
+}
+
+label{
+    color:#3e3e3e;
+    text-shadow:0 0 8px black, 0 0 15px black;
+}
+
+button{
+    margin-right:20px;
+}

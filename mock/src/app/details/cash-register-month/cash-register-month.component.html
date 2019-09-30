@@ -7,7 +7,7 @@
 		
 		<div id="data">
 			
-			<table class="mt-5 ml-5 table table-bordered">
+			<table class="mt-5 ml-5 table table-bordered tagbar">
 			<thead>
 				<tr>
 					<th>日付</th>
@@ -23,6 +23,12 @@
 				</tr>
 			</thead>
             <tbody>
+				<tr *ngFor="let d of 31 | range; index as l">
+					<th class="text-center">2019-06-{{l+1}}日</th>
+					<td class="text-right" *ngFor="let m of 9 | range">
+						0
+					</td>
+				</tr>
 			</tbody>
 			</table>
 		</div>

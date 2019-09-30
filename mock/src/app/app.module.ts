@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +47,7 @@ import { TagDailyComponent } from './details/tag-daily/tag-daily.component';
 import { MoneyFlowMonthComponent } from './details/money-flow-month/money-flow-month.component';
 import { DeleteHistoryDetailsComponent } from './details/delete-history-details/delete-history-details.component';
 import { PrintHistoryDetailsComponent } from './details/print-history-details/print-history-details.component';
+import { ConfirmDialogComponent } from './tools/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -90,11 +93,17 @@ import { PrintHistoryDetailsComponent } from './details/print-history-details/pr
     TagDailyComponent,
     MoneyFlowMonthComponent,
     DeleteHistoryDetailsComponent,
-    PrintHistoryDetailsComponent
+    PrintHistoryDetailsComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
+    BrowserAnimationsModule
+  ],
+  entryComponents: [
+    ConfirmDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

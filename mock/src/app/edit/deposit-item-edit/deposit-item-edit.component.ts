@@ -11,18 +11,12 @@ export class DepositItemEditComponent implements OnInit {
   name:string;
 
   constructor(
-    private router : ActivatedRoute
+    private route : ActivatedRoute
   ) { }
 
   ngOnInit() {
-    const text = this.router.snapshot.queryParamMap.get('test2');
-    alert(text);
-    this.router.queryParams.subscribe(
-      params => {
-        alert(params['name']);
-        console.log(params);
-      }
-    )
+    const text = this.route.snapshot.paramMap.get('name');
+    this.name = text;
   }
 
 }

@@ -28,7 +28,7 @@
                     <td>出金</td>
                     <td>2019/6/14</td>
                     <td></td>
-                    <td class="text-center"><button class="btn btn-outline-success" type="button">名称変更</button>
+                    <td class="text-center"><button class="btn btn-outline-success" type="button" (click)="edit('test')">名称変更</button>
                         <button class="ml-2 btn btn-outline-danger" type="button" (click)="depositDel(1)">削除</button></td>
                 </tr>
                 <tr>
@@ -37,7 +37,7 @@
                     <td>入金</td>
                     <td>2019/6/14</td>
                     <td></td>
-                    <td class="text-center"><button class="btn btn-outline-success" type="button" routerLink="/edit/deposit-edit/:test2">名称変更</button>
+                    <td class="text-center"><button class="btn btn-outline-success" type="button" (click)="edit('test2')">名称変更</button>
                         <button class="ml-2 btn btn-outline-danger" type="button" (click)="depositDel(2)">削除</button></td>
                 </tr>
             </tbody>

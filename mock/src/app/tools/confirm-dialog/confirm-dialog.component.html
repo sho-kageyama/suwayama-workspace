@@ -1,0 +1,21 @@
+<div id="dialog">
+        <div id="dialog-header">
+            <h3 class="text-monospace text-center" >{{data.title}}</h3>
+        </div>
+        <div id="dialog-body">
+            <table class="table table-hover">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Name :</th>
+                        <td><input type="text" value="{{data.name}}"></td>
+                    </tr>
+                    </tbody>
+            </table>
+        <div id="dialog-footer offset-3">
+            <button class="btn btn-outline-warning back"  (click)="closeDialog(false)">キャンセル</button>
+            <button class="ml-2 btn btn-outline-primary add" (click)="closeDialog(true)">変更</button>
+        </div>
+        </div>
+    </div>
