@@ -1,0 +1,154 @@
+package jp.co.ginga.application.helper.facilityreservation;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import jp.co.ginga.application.form.facility.FacilityForm;
+import jp.co.ginga.application.form.facilityreservation.ReservationDetailForm;
+import jp.co.ginga.application.form.facilityreservation.ReservationForm;
+import jp.co.ginga.domain.entity.FacilityReservationEntity;
+
+/**
+ *
+ * @author yoshi
+ *
+ */
+@Component
+public class FacilityReservationHelper {
+
+	public ReservationForm reservationInfo(String id, String info) {
+		int facilityId = Integer.parseInt(id);
+		String array[] = info.split("-");
+
+		ReservationForm reservation = new ReservationForm();
+		FacilityForm facilityForm = new FacilityForm();
+		facilityForm.setId(facilityId);
+		ReservationDetailForm detailForm = new ReservationDetailForm();
+		reservation.setReservationInfo(detailForm);
+		reservation.setFacility(facilityForm);
+
+		reservation.setYear(Integer.parseInt(array[0]));
+		reservation.setMonth(Integer.parseInt(array[1]));
+		reservation.setDay(Integer.parseInt(array[2]));
+
+		return reservation;
+	}
+
+	public ReservationForm setStartandEndTime(ReservationForm form) {
+		ReservationForm reservationForm = form;
+
+		if (form.getStartTime() == null) {
+			String startTime = form.getReservationInfo().getStartHour() + ":"
+					+ form.getReservationInfo().getStartMinute();
+
+			String endTime = form.getReservationInfo().getEndHour() + ":" + form.getReservationInfo().getEndMinute();
+
+			reservationForm.setStartTime(startTime);
+			reservationForm.setEndTime(endTime);
+
+			System.out.println("------------------------");
+			System.out.println("setStartandEndTimeの*分岐1*で生成");
+			System.out.println("startTime :" + reservationForm.getStartTime());
+			System.out.println("endTime   :" + reservationForm.getEndTime());
+
+		} else if (form.getId() != 0 && form.getReservationInfo() != null) {
+			String startTime = form.getReservationInfo().getStartHour() + ":"
+					+ form.getReservationInfo().getStartMinute();
+
+			String endTime = form.getReservationInfo().getEndHour() + ":" + form.getReservationInfo().getEndMinute();
+
+			reservationForm.setStartTime(startTime);
+			reservationForm.setEndTime(endTime);
+
+			System.out.println("------------------------");
+			System.out.println("setStartandEndTimeの*分岐2*で生成");
+			System.out.println("startTime :" + reservationForm.getStartTime());
+			System.out.println("endTime   :" + reservationForm.getEndTime());
+
+		} else {
+			String startHour = reservationForm.getStartTime().split(":")[0];
+			String startMinute = reservationForm.getStartTime().split(":")[1];
+
+			String endHour = reservationForm.getEndTime().split(":")[0];
+			String endMinute = reservationForm.getEndTime().split(":")[1];
+
+			ReservationDetailForm info = new ReservationDetailForm(startHour, startMinute, endHour, endMinute);
+			reservationForm.setReservationInfo(info);
+
+		}
+
+		return reservationForm;
+	}
+
+	public FacilityReservationEntity formConvartEntity(ReservationForm reservationForm) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String date = String.valueOf(reservationForm.getYear()) + "-" + String.valueOf(reservationForm.getMonth()) + "-"
+				+ String.valueOf(reservationForm.getDay());
+
+		String startTime = date + " " + reservationForm.getReservationInfo().getStartHour() + ":"
+				+ reservationForm.getReservationInfo().getStartMinute();
+		String endTime = date + " " + reservationForm.getReservationInfo().getEndHour() + ":"
+				+ reservationForm.getReservationInfo().getEndMinute();
+
+		Date start = sdf.parse(startTime);
+		Date end = sdf.parse(endTime);
+
+		FacilityReservationEntity reservation = new FacilityReservationEntity(reservationForm.getId(), start, end,
+				reservationForm.getFacility().getId(), reservationForm.getUserId());
+		return reservation;
+
+	}
+
+	public ReservationForm entityConvartForm(FacilityReservationEntity reservationEntity) {
+		SimpleDateFormat time = new SimpleDateFormat("H:mm");
+		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+
+		String[] dateArray = date.format(reservationEntity.getStart_time()).split("-");
+		int year = Integer.parseInt(dateArray[0]);
+		int month = Integer.parseInt(dateArray[1]);
+		int day = Integer.parseInt(dateArray[2]);
+
+		String startTime = time.format(reservationEntity.getStart_time());
+		String endTime = time.format(reservationEntity.getEnd_time());
+
+		ReservationForm reservationForm = new ReservationForm(reservationEntity.getId(), year, month, day, startTime,
+				endTime, reservationEntity.getFacility_id(), reservationEntity.getUser_id());
+
+		return reservationForm;
+	}
+
+	public ReservationForm infoConvartForm(ReservationForm reservationForm) {
+		String date = String.valueOf(reservationForm.getYear()) + "-" + String.valueOf(reservationForm.getMonth()) + "-"
+				+ String.valueOf(reservationForm.getDay());
+
+		String startTime = date + " " + reservationForm.getReservationInfo().getStartHour() + ":"
+				+ reservationForm.getReservationInfo().getStartMinute();
+		String endTime = date + " " + reservationForm.getReservationInfo().getEndHour() + ":"
+				+ reservationForm.getReservationInfo().getEndMinute();
+
+		reservationForm.setStartTime(startTime);
+		reservationForm.setEndTime(endTime);
+
+		System.out.println("------------------------");
+		System.out.println("infoConvartFormで生成");
+		System.out.println("startTime :" + reservationForm.getStartTime());
+		System.out.println("endTime   :" + reservationForm.getEndTime());
+
+		return reservationForm;
+	}
+
+	public List<ReservationForm> entityConvartFormList(List<FacilityReservationEntity> entityList) {
+		List<ReservationForm> formList = new ArrayList<>();
+		for (FacilityReservationEntity facilityEntity : entityList) {
+			ReservationForm form = entityConvartForm(facilityEntity);
+			formList.add(form);
+		}
+		return formList;
+	}
+
+}

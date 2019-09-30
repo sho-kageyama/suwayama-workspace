@@ -1,0 +1,43 @@
+package jp.co.ginga.application.form.facility;
+
+import java.io.Serializable;
+import java.util.List;
+
+public class FacilityListForm implements Serializable {
+
+	/**
+	 * 施設一覧情報
+	 */
+	private List<FacilityForm> facilityList;
+
+	private List<FacilityTypeForm> typeList;
+
+	/**
+	 * @return facilityList
+	 */
+	public List<FacilityForm> getFacilityList() {
+		return facilityList;
+	}
+
+	public void setFacilityList(List<FacilityForm> facilityFormList) {
+		this.facilityList = facilityFormList;
+	}
+
+	public List<FacilityTypeForm> getTypeList() {
+		return typeList;
+	}
+
+	public void setTypeList(List<FacilityTypeForm> typeList) {
+		this.typeList = typeList;
+	}
+
+	public FacilityListForm() {
+	}
+
+	public FacilityListForm(List<FacilityForm> facilityList, List<FacilityTypeForm> typeList) {
+		super();
+		this.facilityList = facilityList;
+		this.setTypeList(typeList);
+	}
+
+}

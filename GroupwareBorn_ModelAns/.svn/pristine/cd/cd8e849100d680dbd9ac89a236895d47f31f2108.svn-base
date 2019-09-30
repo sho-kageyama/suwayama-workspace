@@ -1,0 +1,337 @@
+package jp.co.ginga.application.controller.facilityreservation;
+
+import java.text.ParseException;
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+
+import jp.co.ginga.application.form.facility.FacilityForm;
+import jp.co.ginga.application.form.facility.FacilityListForm;
+import jp.co.ginga.application.form.facility.FacilityTypeForm;
+import jp.co.ginga.application.form.facilityreservation.CalendarListForm;
+import jp.co.ginga.application.form.facilityreservation.DayForm;
+import jp.co.ginga.application.form.facilityreservation.ReservationDetailForm;
+import jp.co.ginga.application.form.facilityreservation.ReservationForm;
+import jp.co.ginga.application.form.facilityreservation.ReservationFormVaridator;
+import jp.co.ginga.application.helper.calendar.CalendarHelper;
+import jp.co.ginga.application.helper.facility.FacilityHelper;
+import jp.co.ginga.application.helper.facilityreservation.FacilityReservationHelper;
+import jp.co.ginga.domain.entity.FacilityEntity;
+import jp.co.ginga.domain.entity.FacilityReservationEntity;
+import jp.co.ginga.domain.entity.FacilityTypeEntity;
+import jp.co.ginga.domain.service.FacilityResevationService;
+import jp.co.ginga.domain.service.FacilityService;
+import jp.co.ginga.domain.service.FacilityTypeService;
+
+/**
+ * @author yoshi
+ *
+ */
+@Controller
+@SessionAttributes(names = "facilityReservationForm")
+public class FacilityReservationController {
+
+	/**
+	 * facilityサービス
+	 */
+	@Autowired
+	FacilityService facilityService;
+
+	/**
+	 * facilityTypeサービス
+	 */
+	@Autowired
+	FacilityTypeService typeService;
+
+	/**
+	 * facilityTypeサービス
+	 */
+	@Autowired
+	FacilityResevationService reservationService;
+
+	/**
+	 * facilityヘルパー
+	 */
+	@Autowired
+	FacilityHelper facilityHelper;
+
+	/**
+	 * facilityreservationヘルパー
+	 */
+	@Autowired
+	FacilityReservationHelper reservationHelper;
+
+	/**
+	 * facilityreservationヘルパー
+	 */
+	@Autowired
+	CalendarHelper calendarHelper;
+
+	/**
+	 * ReservationVaridator
+	 */
+	@Autowired
+	ReservationFormVaridator reservationValidator;
+
+	/**
+	 * ユーザーコントローラー内で使用するセッションオブジェクトの生成処理
+	 *
+	 */
+	@ModelAttribute(value = "facilityReservationForm")
+	public ReservationForm setUpForm() {
+		return new ReservationForm();
+	}
+
+	@InitBinder("facilityReservationForm")
+	public void initBinder(WebDataBinder binder) {
+		binder.addValidators(reservationValidator);
+	}
+
+	/**
+	 * 予約可能施設一覧
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations", method = RequestMethod.GET)
+	public String facilityIndex(Model model) {
+
+		List<FacilityEntity> facilityEntityList = facilityService.getFacilityList();
+		List<FacilityTypeEntity> typeEntityList = typeService.getFacilityTypeList();
+
+		List<FacilityForm> facilityFormList = facilityHelper
+				.convertFromFacilityEntityListToFacilityFormList(facilityEntityList);
+		List<FacilityTypeForm> typeFormList = facilityHelper.convertTypeEntityFacilityTypeForm(typeEntityList);
+
+		FacilityListForm form = new FacilityListForm(facilityFormList, typeFormList);
+
+		model.addAttribute("facilityListForm", form);
+
+		return "facilityreservation/facility-reservation-list";
+	}
+
+	/**
+	 * 予約状況施設詳細
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/{id}", method = RequestMethod.GET)
+	public String facilityReservationIndex(@PathVariable int id, Model model) {
+
+		CalendarListForm calendarForm = calendarHelper.getNow();
+		List<DayForm> calendar = newCalendar(calendarForm, id);
+		calendarForm.setCalendar(calendar);
+
+		model.addAttribute("calendarListForm", calendarForm);
+
+		return "facilityreservation/facility-status-details";
+	}
+
+	/**
+	 * 新規予約
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/{id}/add/{info}", method = RequestMethod.GET)
+	public String reservationAdd(@PathVariable String id, @PathVariable String info, ReservationForm reservationForm,
+			Model model) {
+
+		reservationForm = reservationHelper.reservationInfo(id, info);
+
+		FacilityEntity facility = facilityService.getFacility(reservationForm.getFacility().getId());
+		FacilityForm facilityForm = facilityHelper.convertFromFacilityEntityToFacilityForm(facility);
+
+		reservationForm.setFacility(facilityForm);
+
+		model.addAttribute("facilityReservationForm", reservationForm);
+
+		return "facilityreservation/facility-reservation";
+	}
+
+	/**
+	 * 新規予約確認
+	 *
+	 * @throws ParseException
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/check", method = RequestMethod.POST)
+	public String createReservationCheck(@Valid @ModelAttribute("facilityReservationForm") ReservationForm form,
+			BindingResult result, Model model) throws ParseException {
+
+		ReservationForm reservationForm = reservationHelper.setStartandEndTime(form);
+
+		if (result.hasErrors()) {
+			return "facilityreservation/facility-reservation";
+		}
+
+		model.addAttribute("facilityReservationForm", reservationForm);
+
+		return "facilityreservation/facility-reservation-check";
+	}
+
+	/**
+	 * 新規予約完了
+	 *
+	 * @throws ParseException
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/complete", method = RequestMethod.POST)
+	public String createReservationComplate(@ModelAttribute("facilityReservationForm") ReservationForm form,
+			SessionStatus sessionStatus) throws ParseException {
+
+		FacilityReservationEntity reservationEntity = reservationHelper.formConvartEntity(form);
+
+		if (reservationService.AddReservation(reservationEntity) != 1) {
+			System.out.println("error");
+		}
+
+		sessionStatus.setComplete();
+
+		return "facilityreservation/facility-reservation-complete";
+	}
+
+	/**
+	 * 予約詳細
+	 *
+	 * @throws ParseException
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/{facilityId}/{reservationId}", method = RequestMethod.GET)
+	public String reservationDetail(@PathVariable int reservationId, Model model) {
+
+		FacilityReservationEntity reservationEntity = reservationService.getFacilityReservationById(reservationId);
+		ReservationForm form = reservationHelper.entityConvartForm(reservationEntity);
+		ReservationForm reservationForm = reservationHelper.setStartandEndTime(form);
+
+		FacilityEntity facility = facilityService.getFacility(form.getFacility().getId());
+		FacilityForm facilityForm = facilityHelper.convertFromFacilityEntityToFacilityForm(facility);
+		reservationForm.setFacility(facilityForm);
+
+		model.addAttribute("facilityReservationForm", reservationForm);
+
+		return "facilityreservation/reservation-details";
+	}
+
+	/**
+	 * 予約更新
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/{facilityId}/{reservationId}", method = RequestMethod.POST)
+	public String updateReservation(@Valid @ModelAttribute("facilityReservationForm") ReservationForm form,
+			BindingResult result, @PathVariable int facilityId, Model model) throws ParseException {
+
+		ReservationForm reservationForm = reservationHelper.setStartandEndTime(form);
+		ReservationForm convertedForm = reservationHelper.infoConvartForm(reservationForm);
+
+		if (result.hasErrors()) {
+			return "facilityreservation/reservation-details";
+		}
+
+		FacilityReservationEntity reservationEntity = reservationHelper.formConvartEntity(convertedForm);
+
+		if (reservationService.UpdateReservation(reservationEntity) != 1) {
+			System.out.println("error");
+		}
+
+		return "redirect:/facility-reservations/{facilityId}";
+	}
+
+	/**
+	 * 予約削除
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/{facilityId}/{reservationId}", params = "delete", method = RequestMethod.POST)
+	public String deleteReservation(@PathVariable int facilityId, @PathVariable int reservationId, Model model) {
+
+		if (reservationService.DeleteReservation(reservationId) != 1) {
+			System.out.println("error");
+		}
+
+		return "redirect:/facility-reservations/{facilityId}";
+	}
+
+	/**
+	 * 施設絞り込み
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/facility-type/select", method = RequestMethod.POST)
+	@ResponseBody
+	public List<FacilityForm> selectFacilityList(@RequestBody FacilityForm form) {
+
+		int typeId = form.getTypeId();
+		List<FacilityEntity> selectFacilityList;
+		if (typeId == 0) {
+			selectFacilityList = facilityService.getFacilityList();
+		} else {
+			selectFacilityList = facilityService.getFacilityTypeList(typeId);
+		}
+
+		List<FacilityForm> formList = facilityHelper
+				.convertFromFacilityEntityListToFacilityFormList(selectFacilityList);
+
+		return formList;
+	}
+
+	/**
+	 * 次月表示
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/nextmonth/{id}", method = RequestMethod.POST)
+	@ResponseBody
+	public CalendarListForm nextMonth(@RequestBody CalendarListForm calendarForm, @PathVariable int id) {
+
+		CalendarListForm nextCalendarForm = calendarHelper.nextMonth(calendarForm);
+		List<DayForm> calendar = newCalendar(calendarForm, id);
+		nextCalendarForm.setCalendar(calendar);
+
+		return nextCalendarForm;
+	}
+
+	/**
+	 * 前月表示
+	 *
+	 */
+	@RequestMapping(path = "/facility-reservations/prevmonth/{id}", method = RequestMethod.POST)
+	@ResponseBody
+	public CalendarListForm prevMonth(@RequestBody CalendarListForm calendarForm, @PathVariable int id) {
+
+		CalendarListForm prevCalendarForm = calendarHelper.prevMonth(calendarForm);
+		List<DayForm> calendar = newCalendar(calendarForm, id);
+		prevCalendarForm.setCalendar(calendar);
+
+		return prevCalendarForm;
+	}
+
+	/**
+	 * カレンダー生成
+	 * 
+	 * @param form
+	 * @param id
+	 * @return newCalendar
+	 */
+	private List<DayForm> newCalendar(CalendarListForm form, int id) {
+		FacilityEntity facilityInfo = facilityService.getFacility(id);
+
+		form.setFacility(facilityHelper.convertFromFacilityEntityToFacilityForm(facilityInfo));
+
+		int dayOfWeek = calendarHelper.getWeekOfDay(form.getYear(), form.getMonth());
+		int days = calendarHelper.getDays(form.getYear(), form.getMonth());
+		List<ReservationDetailForm> reservedList = reservationService.getFacilityReservationList(facilityInfo.getId(),
+				form.getYear(), form.getMonth());
+
+		List<DayForm> newCalendar = calendarHelper.makeCalendar(dayOfWeek, days, reservedList);
+
+		return newCalendar;
+	}
+}

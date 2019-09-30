@@ -1,0 +1,45 @@
+package jp.co.ginga.domain.repository;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
+
+import jp.co.ginga.application.form.facilityreservation.ReservationDetailForm;
+import jp.co.ginga.domain.entity.FacilityReservationEntity;
+
+/**
+ * 施設予約テーブルRepository
+ * 
+ * @author yoshi
+ *
+ */
+@Mapper
+@Repository
+public interface FacilityReservationRepository {
+
+	@Select("select id, day(start_time)as day, date_format(start_time,'%k:%i')as startTime, date_format(end_time,'%k:%i')as endTime, user_id as userId from reservation where facility_id = #{facilityId} and date_format(start_time,'%Y-%c') = #{yearMonth} order by start_time asc")
+	List<ReservationDetailForm> facilityReservation(int facilityId, String yearMonth);
+
+	@Select("select * from reservation where facility_id = #{facility_id} and end_time >= #{start_time} and start_time <= #{end_time}")
+	List<FacilityReservationEntity> checkDuplicate(FacilityReservationEntity reservationEntity);
+
+	@Select("select * from reservation where id = #{id}")
+	FacilityReservationEntity findOne(int id);
+
+	@Insert("insert into reservation (start_time,end_time,facility_id,user_id) values (#{start_time},#{end_time},#{facility_id},#{user_id})")
+	@Options(useGeneratedKeys = true, keyProperty = "id")
+	boolean insert(FacilityReservationEntity reservationEntity);
+
+	@Update("update reservation set start_time = #{start_time}, end_time = #{end_time}, facility_id = #{facility_id}, user_id = #{user_id} where id = #{id}")
+	boolean update(FacilityReservationEntity reservationEntity);
+
+	@Delete("delete from reservation where id = #{id}")
+	boolean delete(int id);
+
+}

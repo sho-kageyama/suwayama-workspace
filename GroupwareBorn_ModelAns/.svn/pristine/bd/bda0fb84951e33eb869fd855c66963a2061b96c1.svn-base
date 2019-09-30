@@ -1,0 +1,6 @@
+err.password.discord=パスワードが一致しません。
+err.user.duplicate=ユーザー名が既に使用されています。
+err.not.empty=必須入力項目です
+typeMismatch.int=半角数字で入力してください
+AbstractUserDetailsAuthenticationProvider.badCredentials=入力した情報に誤りがあります
+AbstractUserDetailsAuthenticationProvider.disabled=無効なアカウントです
