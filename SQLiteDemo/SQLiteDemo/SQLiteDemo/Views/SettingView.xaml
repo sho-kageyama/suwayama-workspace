@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SQLiteDemo.Views.SettingView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Setting"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="Center"
+                FontSize="30"/>
+            <Grid RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="メニュー"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="MenuCommand"/>
+
+                <Button Text="メニュー種別"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="TypeCommand"/>
+
+                <Button Text="卓"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Clicked="TableCommand"/>
+
+                <Button Text="ユーザー"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Clicked="UserCommand"/>
+
+                <Button Text="ユーザー種別"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Clicked="UserTypeCommand"
+                        Grid.Row="1"
+                        Grid.Column="1"/>
+
+                <Button Text="ユーザー詳細"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Grid.Row="1"
+                        Grid.Column="2"/>
+
+                <Button Text="セット設定"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Grid.Row="2"
+                        Grid.Column="0" 
+                        Clicked="SetCommand"/>
+
+
+
+
+            </Grid>
+            <Button Text="戻る"
+                    VerticalOptions="EndAndExpand"
+                    Clicked="BackCommand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

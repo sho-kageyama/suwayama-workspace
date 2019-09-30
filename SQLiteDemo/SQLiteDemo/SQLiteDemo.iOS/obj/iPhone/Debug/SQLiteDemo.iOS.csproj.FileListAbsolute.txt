@@ -1,0 +1,8 @@
+C:\Users\suwayama\source\repos\SQLiteDemo\SQLiteDemo\SQLiteDemo.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\suwayama\source\repos\SQLiteDemo\SQLiteDemo\SQLiteDemo.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Users\suwayama\source\repos\SQLiteDemo\SQLiteDemo\SQLiteDemo.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\suwayama\source\repos\SQLiteDemo\SQLiteDemo\SQLiteDemo.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+C:\Users\suwayama\source\repos\SQLiteDemo\SQLiteDemo\SQLiteDemo.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\suwayama\source\repos\SQLiteDemo\SQLiteDemo\SQLiteDemo.iOS\obj\iPhone\Debug\optimized\
+C:\Users\suwayama\source\repos\SQLiteDemo\SQLiteDemo\SQLiteDemo.iOS\obj\iPhone\Debug\SQLiteDemo.iOS.csprojAssemblyReference.cache
+C:\Users\suwayama\source\repos\SQLiteDemo\SQLiteDemo\SQLiteDemo.iOS\obj\iPhone\Debug\SQLiteDemo.iOS.csproj.CoreCompileInputs.cache

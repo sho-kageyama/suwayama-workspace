@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SQLiteDemo.MainPage">
+    <ContentPage.Content x:Uid="Cont">
+        <StackLayout x:Name="stk">
+        <Grid BackgroundColor="#573720" x:Name="grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Place new controls here -->
+            <Label Text="Menu" 
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   TextColor="White"
+                   FontSize="20"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+            <Button Text="来店"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    Clicked="TableCommand"/>
+
+            <Button Text="勤怠"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    Clicked="WorkCommand"/>
+            
+            <Button Text="伝票"
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    Clicked="SlipCommand"/>
+
+                <Button Text="設定"
+                    Grid.Row="0"
+                    Grid.Column="5"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    Clicked="SettingCommand"/>
+            </Grid>
+
+
+            <StackLayout x:Name="stk2">
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,158 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.Android\\SQLiteDemo.Android.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.Android\\SQLiteDemo.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.Android\\SQLiteDemo.Android.csproj",
+        "projectName": "SQLiteDemo.Android",
+        "projectPath": "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.Android\\SQLiteDemo.Android.csproj",
+        "packagesPath": "C:\\Users\\suwayama\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.Android\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\suwayama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid90"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid90": {
+            "projectReferences": {
+              "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.csproj": {
+                "projectPath": "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid90": {
+          "dependencies": {
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.1.5.188, )"
+            },
+            "Xamarin.Android.Support.Core.Utils": {
+              "target": "Package",
+              "version": "[28.0.0.1, )"
+            },
+            "Xamarin.Android.Support.CustomTabs": {
+              "target": "Package",
+              "version": "[28.0.0.1, )"
+            },
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[28.0.0.1, )"
+            },
+            "Xamarin.Android.Support.v4": {
+              "target": "Package",
+              "version": "[28.0.0.1, )"
+            },
+            "Xamarin.Android.Support.v7.AppCompat": {
+              "target": "Package",
+              "version": "[28.0.0.1, )"
+            },
+            "Xamarin.Android.Support.v7.CardView": {
+              "target": "Package",
+              "version": "[28.0.0.1, )"
+            },
+            "Xamarin.Android.Support.v7.MediaRouter": {
+              "target": "Package",
+              "version": "[28.0.0.1, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.0.0.425677, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.5.231, )"
+            }
+          }
+        }
+      }
+    },
+    "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.csproj",
+        "projectName": "SQLiteDemo",
+        "projectPath": "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo.csproj",
+        "packagesPath": "C:\\Users\\suwayama\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\suwayama\\source\\repos\\SQLiteDemo\\SQLiteDemo\\SQLiteDemo\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\suwayama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.3"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.3": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard1.3": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.1.5.188, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.0.0.425677, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.5.231, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}
